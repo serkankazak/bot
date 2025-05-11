@@ -1,0 +1,58 @@
+<html>
+
+<img id="img" src="">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+
+<script>
+
+var ws = null
+
+function connect() {
+
+	console.log("connecting")
+
+	ws = new WebSocket('<ws_server>')
+
+	ws.onopen = function() {
+		console.log("connected")
+		console.log("send password")
+		ws.send('<secret>')
+	}
+
+	ws.onmessage = function(e) {
+		
+		console.log('received:', e.data)
+
+		if (e.data.slice(0, 7) == "welcome") {
+
+			console.log("send: cam2")
+			ws.send('cam2')
+
+		} else if (e.data.slice(0, 5) == "cam2\t") {
+			console.log("cam2 image:", e.data.split("\t")[1])
+
+			var go = CryptoJS.AES.decrypt(e.data.split("\t")[1], CryptoJS.enc.Hex.parse("<key>"), {iv: CryptoJS.enc.Hex.parse("<iv>")}).toString(CryptoJS.enc.Utf8)
+			document.getElementById("img").src = "data:image/jpeg;base64," + go
+
+		}
+
+	}
+
+	ws.onclose = function(e) {
+		console.log('closed', e.reason)
+		setTimeout(function() {
+			connect()
+		}, 100)
+	}
+
+	ws.onerror = function(err) {
+		console.error('error', err.message)
+		ws.close()
+	}
+
+}
+
+connect()
+
+</script></html>
