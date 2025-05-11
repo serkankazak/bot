@@ -419,6 +419,76 @@ echo 'max-load-1 = 24' >> /etc/watchdog.conf
 exit
 ```
 
+### edit files for camera IPs, passwords, discord token, telegram token, optionally websocket server info
+##### my setup as an example:
+```
+cd ~/Downloads/bot
+
+sed -i 's/<iv>/xxx/' rtsp.js
+sed -i 's/<key>/xxx/' rtsp.js
+sed -i 's/<ws_server>/wss:\/\/xxx.onrender.com/' rtsp.js
+sed -i 's/<secret>/xxx/' rtsp.js
+sed -i 's/<cam1>/http:\/\/192.168.1.xx:88\/cgi-bin\/CGIProxy.fcgi?cmd=snapPicture2\&usr=xxx\&pwd=xxx/' rtsp.js
+sed -i 's/<cam2>/http:\/\/192.168.1.xx:88\/cgi-bin\/CGIProxy.fcgi?cmd=snapPicture2\&usr=xxx\&pwd=xxx/' rtsp.js
+sed -i 's/<cam3>/http:\/\/xxx:xxx@192.168.1.xx\/snap.jpg/' rtsp.js
+sed -i 's/<cam4>/http:\/\/xxx:xxx@192.168.1.xx\/snap.jpg/' rtsp.js
+sed -i 's/<cam5>/rtsp:\/\/xxx:xxx@192.168.1.xx\/22/' rtsp.js
+
+sed -i 's/<s1>/rtsp:\/\/xxx:xxx@192.168.1.xx:88\/videoMain/' omx.sh
+sed -i 's/<s2>/rtsp:\/\/xxx:xxx@192.168.1.xx:88\/videoMain/' omx.sh
+sed -i 's/<s3>/rtsp:\/\/xxx:xxx@192.168.1.xx\/22/' omx.sh
+sed -i 's/<s4>/rtsp:\/\/xxx:xxx@192.168.1.xx\/22/' omx.sh
+sed -i 's/<s5>/rtsp:\/\/xxx:xxx@192.168.1.xx\/22/' omx.sh
+
+sed -i 's/<telegram_bot>/xxx/' bot.js
+sed -i 's/<telegram_token>/xxx/' bot.js
+sed -i 's/<telegram_chat>/xxx/' bot.js
+sed -i 's/<discord_channel>/xxx/' bot.js
+sed -i 's/<cam_username1>/xxx/' bot.js
+sed -i 's/<cam_password1>/xxx/' bot.js
+sed -i 's/<cam_username2>/xxx/' bot.js
+sed -i 's/<cam_password2>/xxx/' bot.js
+sed -i 's/<cam1_name>/FI9804W_xxx/' bot.js
+sed -i 's/<cam2_name>/FI9821W_xxx/' bot.js
+sed -i 's/<cam3_name>/ipcam1/' bot.js
+sed -i 's/<cam4_name>/ipcam2/' bot.js
+sed -i 's/<cam5_name>/ipcam3/' bot.js
+sed -i 's/<cam6_name>/ipcam4/' bot.js
+sed -i 's/<cam3_name2>/cam1/' bot.js
+sed -i 's/<cam4_name2>/cam2/' bot.js
+sed -i 's/<cam5_name2>/cam3/' bot.js
+sed -i 's/<cam6_name2>/cam4/' bot.js
+sed -i 's/<cam1_ip>/192.168.1.xx:88/' bot.js
+sed -i 's/<cam2_ip>/192.168.1.xx:88/' bot.js
+sed -i 's/<cam3_ip>/192.168.1.xx/' bot.js
+sed -i 's/<cam4_ip>/192.168.1.xx/' bot.js
+sed -i 's/<cam5_ip>/192.168.1.xx/' bot.js
+sed -i 's/<cam6_ip>/192.168.1.xx/' bot.js
+sed -i 's/<discord_token>/xxx/' bot.js
+
+sed -i 's/<cam1_name>/FI9804W_xxx/' clear.sh
+sed -i 's/<cam2_name>/FI9821W_xxx/' clear.sh
+sed -i 's/<cam3_name>/ipcam1/' clear.sh
+sed -i 's/<cam4_name>/ipcam2/' clear.sh
+sed -i 's/<cam5_name>/ipcam3/' clear.sh
+sed -i 's/<cam6_name>/ipcam4/' clear.sh
+
+sed -i 's/<cam1_name>/FI9804W_xxx/' clear_now.sh
+sed -i 's/<cam2_name>/FI9821W_xxx/' clear_now.sh
+sed -i 's/<cam3_name>/ipcam1/' clear_now.sh
+sed -i 's/<cam4_name>/ipcam2/' clear_now.sh
+sed -i 's/<cam5_name>/ipcam3/' clear_now.sh
+sed -i 's/<cam6_name>/ipcam4/' clear_now.sh
+
+sed -i 's/<rasp_secret>/xxx/' ws_server/index.js
+sed -i 's/<phone_secret>/xxx/' ws_server/index.js
+
+sed -i 's/<ws_server>/wss:\/\/xxx.onrender.com/' ws_server/phone.html
+sed -i 's/<secret>/xxx/' ws_server/phone.html
+sed -i 's/<key>/xxx/' ws_server/phone.html
+sed -i 's/<iv>/xxx/' ws_server/phone.html
+```
+
 ```
 sudo systemctl daemon-reload
 sudo systemctl restart vsftpd
@@ -431,11 +501,11 @@ sudo systemctl daemon-reload
 sudo service picambot restart
 sudo service picambot start
 
-sudo systemctl enable picambotrtsp
-sudo systemctl start picambotrtsp
-sudo systemctl daemon-reload
-sudo service picambotrtsp restart
-sudo service picambotrtsp start
+sudo systemctl enable picambotrtsp # optional
+sudo systemctl start picambotrtsp # optional
+sudo systemctl daemon-reload # optional
+sudo service picambotrtsp restart # optional
+sudo service picambotrtsp start # optional
 
 sudo reboot
 ```
