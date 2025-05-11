@@ -222,16 +222,16 @@ sudo mkdir -p /home/pi/ftp/files/ipcam4/record
 sudo mkdir -p /home/pi/ftp/files/ipcam4/snap
 sudo mkdir -p /home/pi/ftp/files/ipcam4/snap/done
 sudo mkdir -p /home/pi/ftp/files/ipcam4/snap/done2
-sudo mkdir -p /home/pi/ftp/files/FI9804W_00626E4EB05B
-sudo mkdir -p /home/pi/ftp/files/FI9804W_00626E4EB05B/record
-sudo mkdir -p /home/pi/ftp/files/FI9804W_00626E4EB05B/snap
-sudo mkdir -p /home/pi/ftp/files/FI9804W_00626E4EB05B/snap/done
-sudo mkdir -p /home/pi/ftp/files/FI9804W_00626E4EB05B/snap/done2
-sudo mkdir -p /home/pi/ftp/files/FI9821W_C4D6553928E5
-sudo mkdir -p /home/pi/ftp/files/FI9821W_C4D6553928E5/record
-sudo mkdir -p /home/pi/ftp/files/FI9821W_C4D6553928E5/snap
-sudo mkdir -p /home/pi/ftp/files/FI9821W_C4D6553928E5/snap/done
-sudo mkdir -p /home/pi/ftp/files/FI9821W_C4D6553928E5/snap/done2
+sudo mkdir -p /home/pi/ftp/files/cam5
+sudo mkdir -p /home/pi/ftp/files/cam5/record
+sudo mkdir -p /home/pi/ftp/files/cam5/snap
+sudo mkdir -p /home/pi/ftp/files/cam5/snap/done
+sudo mkdir -p /home/pi/ftp/files/cam5/snap/done2
+sudo mkdir -p /home/pi/ftp/files/cam6
+sudo mkdir -p /home/pi/ftp/files/cam6/record
+sudo mkdir -p /home/pi/ftp/files/cam6/snap
+sudo mkdir -p /home/pi/ftp/files/cam6/snap/done
+sudo mkdir -p /home/pi/ftp/files/cam6/snap/done2
 sudo chown -R pi:pi /home/pi/ftp/files
 ```
 
