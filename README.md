@@ -1,4 +1,7 @@
 # Raspberry Camera Bot (Discord/Telegram)
+#### with Person detection (tensorflow lite)
+
+---
 
 ## Tested on Raspberry legacy Bullseye OS
 
