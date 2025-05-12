@@ -410,6 +410,8 @@ sudo nano /etc/systemd/system.conf
 
 ```
 sudo su
+```
+```
 echo 'dtparam=watchdog=on' >> /boot/config.txt # echo 'dtparam=watchdog=on' >> /boot/firmware/config.txt
 echo 'watchdog-device = /dev/watchdog' >> /etc/watchdog.conf
 echo 'watchdog-timeout = 15' >> /etc/watchdog.conf
