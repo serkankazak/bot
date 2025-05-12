@@ -193,6 +193,7 @@ Restart=always
 WantedBy=multi-user.target
 ```
 
+#### edit as necessary:
 ```
 sudo mkdir /home/pi/ftp
 sudo chown nobody:nogroup /home/pi/ftp
