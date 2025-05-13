@@ -1,6 +1,8 @@
 # Raspberry Camera Bot (Discord/Telegram)
 #### with Person detection (tensorflow lite)
 
+<img src="demo.gif">
+
 https://www.youtube.com/watch?v=55k0FqwHrls
 
 [![setup](http://img.youtube.com/vi/55k0FqwHrls/0.jpg)](http://www.youtube.com/watch?v=55k0FqwHrls "setup")
