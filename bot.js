@@ -154,7 +154,7 @@ function listv(msg, cam, gr) {
 		} else {
 			var a = stdout.split("\n");
 			for (var i = 0; i < a.length; i = i + 100) {
-				msend(msg.channel, a.slice(i, i + 100));
+				msend(msg.channel, a.slice(i, i + 100).join('\n'));
 			}
 			msend(msg.channel, '---');
 		}
