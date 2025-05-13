@@ -66,7 +66,7 @@ function msend(channel, m, f=null, i=0) {
 
 	} else {
 
-		channel.send(m).catch((e) => {
+		channel.send({content: m}).catch((e) => {
 			logg("\n\n\n----------");
 			logg("__[" + i + "]__");
 			logg(m);
