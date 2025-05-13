@@ -197,7 +197,7 @@ Restart=always
 WantedBy=multi-user.target
 ```
 
-#### edit as necessary:
+### edit as necessary:
 ```
 sudo mkdir /home/pi/ftp
 sudo chown nobody:nogroup /home/pi/ftp
@@ -527,4 +527,4 @@ cat ~/Downloads/bot/log.txt
 tail -f ~/Downloads/bot/log.txt
 ```
 
-#### fix raspberry ip on router and enter raspberry ip, username, password for ftp authentication in camera setup
+### fix raspberry ip on router and enter raspberry ip, username, password for ftp authentication in camera setup
