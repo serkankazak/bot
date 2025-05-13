@@ -170,7 +170,7 @@ function video(msg, cam) {
 				var stdo1 = stdout.split("\n")[0];
 				if (stdo1 == "0") {
 					msend(msg.channel, "processing " + stdo);
-					exec("rm -f /home/pi/Downloads/bot/t.mp4; ffmpeg -i /home/pi/ftp/files/" + cam + "/record/" + stdo + " -c:v h264_omx -r 30 -b:v 500k /home/pi/Downloads/bot/t.mp4", (error, stdout, stderr) => {
+					exec("rm -f /home/pi/Downloads/bot/t.mp4; ffmpeg -i /home/pi/ftp/files/" + cam + "/record/" + stdo + " -c:v h264_v4l2m2m -r 30 -b:v 500k /home/pi/Downloads/bot/t.mp4", (error, stdout, stderr) => {
 						msend(msg.channel, stdo, ["/home/pi/Downloads/bot/t.mp4"]);
 					});
 				} else {
