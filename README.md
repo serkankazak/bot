@@ -1,5 +1,6 @@
 # Raspberry Camera Bot (Discord/Telegram)
 #### with Person detection (tensorflow lite)
+#### receive message when camera(s) upload to raspberry ftp server
 
 <img src="demo.gif">
 
