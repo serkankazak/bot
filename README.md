@@ -2,6 +2,7 @@
 #### with person detection (tensorflow lite), receive message when camera(s) upload to raspberry ftp server
 
 <img src="demo.gif">
+<img src="demo2.gif">
 
 https://www.youtube.com/watch?v=55k0FqwHrls
 
