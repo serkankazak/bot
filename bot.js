@@ -47,8 +47,8 @@ function msend(channel, m, f=null, i=0) {
 	if (f != null) {
 
 		var files = []
-		for (var i = 0; i < f.length; i++) {
-			files.push(new AttachmentBuilder(f[i]))
+		for (var j = 0; j < f.length; j++) {
+			files.push(new AttachmentBuilder(f[j]))
 		}
 
 		channel.send({content: m, files: files}).catch((e) => {
